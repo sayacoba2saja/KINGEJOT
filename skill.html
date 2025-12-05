@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING EJOT - SKILLS & EXPERTISE</title>
+    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFOG3Q1SSjYSiNHuA_tw9GKwCRT1VNgdmz0WXPunkzkHeAzVtn4XWQckRCY7YR0mcdIBnNDi6lmyTyXiqJOBUnUVq8PF4yyAgSQchVB3Z7dQSPcmb9X7PgCnNCZ80UNhAwtvyfKPrRiB3-xq7aRkbmwUjVhfVHp5XB5xO8PbeIgbquEr7JrI5B5KIuegq4y/w400-h400/EJOT%20LOGO%20(HD).png"
+                type="image/png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            DEFAULT: '#800000',
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c', 
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        },
+                        dark: {
+                            bg: '#0f0f0f',
+                            card: '#1a1a1a',
+                            input: '#2a2a2a'
+                        },
+                        light: {
+                            bg: '#f9fafb',
+                            card: '#ffffff',
+                            input: '#f3f4f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Variables untuk Tema */
+        :root {
+            --bg-color: #f9fafb;
+            --text-color: #1f2937;
+            --text-muted: #6b7280;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(127, 29, 29, 0.1);
+            --input-bg: #f3f4f6;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        .dark {
+            --bg-color: #0f0f0f;
+            --text-color: #ffffff;
+            --text-muted: #9ca3af;
+            --card-bg: rgba(26, 26, 26, 0.7);
+            --card-border: rgba(127, 29, 29, 0.3);
+            --input-bg: #2a2a2a;
+            --nav-bg: rgba(15, 15, 15, 0.9);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7f1d1d;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ef4444;
+        }
+
+        /* Text Gradient Maroon */
+        .text-gradient {
+            background: linear-gradient(to right, #ef4444, #7f1d1d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Glassmorphism Card (Updated for Theme Support) */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        /* Shadow tambahan untuk light mode agar kartu terlihat jelas */
+        html:not(.dark) .glass-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* --- LOGO TEXT SHADOW --- */
+        .hover-text-red:hover {
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.4);
+        }
+        .hover-text-white:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+    </style>
+
+    <!-- Script to set initial theme based on preference -->
+    <script>
+        function setInitialTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        setInitialTheme();
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+</head>
+<body class="transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky w-full z-50 top-0 left-0 bg-[var(--nav-bg)] backdrop-blur-md border-b border-maroon-900/10 dark:border-maroon-900/30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 cursor-pointer group flex items-center gap-3">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNTKypUcbQULTsBvgTBjynHonvLbVTG41RxeWBhUCsm1mTvwZDxAP9J6pYjLZXduD75anAOx5-tbIEDxm9VN1vca56rvNx0Xe-flE5tEhSv6jGLi42KJw0XyyTy_GtATtHnlaD0Sa2HGDEutN_UuklewZAJA5WlKIiJTpH1wFUQk-FHxA69JZIvqbexr_/w400-h400/EJOT%20LOGO%20(2).png" 
+                             alt="King Ejot Logo" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/7f1d1d/ffffff?text=KE';"
+                             class="h-10 w-10 object-contain rounded-full shadow-[0_0_10px_rgba(185,28,28,0.4)] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] group-hover:scale-110">
+                    
+                    <h1 class="text-2xl font-bold font-sans p-2 rounded-lg transition-all duration-300">
+                        <span class="transition-all duration-300 hover-text-red group-hover:text-shadow-[0_0_15px_rgba(239,68,68,0.8)]">KING</span>
+                        <span class="text-maroon-500 transition-all duration-300 hover-text-white group-hover:text-shadow-[0_0_15px_rgba(255,255,255,0.8)]">EJOT</span>
+                    </h1>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html#home" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="tentang.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="#skills" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-maroon-500 font-bold">Skills</a>
+                    <a href="service.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                    <a href="feature.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                    <!-- CTA Button -->
+                    <a href="index.html#contact" class="bg-maroon-700 hover:bg-maroon-600 text-white px-6 py-2 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                        Let's Talk
+                    </a>
+
+                    <!-- Theme Toggle (Desktop) -->
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i> 
+                        <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Controls (Toggle + Menu) -->
+                <div class="md:hidden flex items-center gap-4">
+                     <!-- Theme Toggle (Mobile) -->
+                     <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i>
+                        <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-maroon-500 dark:hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[var(--nav-bg)] border-t border-maroon-900/10 dark:border-maroon-900/30">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#skills" class="inline-flex items-center justify-center bg-maroon-700 hover:bg-maroon-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen pt-24 pb-20 bg-gray-100 dark:bg-[#0a0a0a]">
+        <!-- Skills Section -->
+        <section id="skills" class="py-12 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-color)]">Skills & <span class="text-maroon-500">Expertise</span></h2>
+                    <p class="text-muted max-w-2xl mx-auto">Jelajahi keahlian teknis dan non-teknis saya. Klik setiap kategori untuk melihat detail.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Mobile Phone (Was Frontend) -->
+                    <div class="glass-card p-8 rounded-2xl hover:border-maroon-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold mb-6 text-center border-b border-gray-700 pb-4 dark:text-white text-gray-800">MOBILE PHONE</h3>
+                        <div class="space-y-4">
+                            <!-- GAME (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('mobile_game')" title="Lihat Game">
+                                <i class="fas fa-gamepad text-green-500 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">GAME <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">Addicted</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full">
+                                        <div class="h-2 bg-maroon-600 rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ANDROID APP (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('android_app')">
+                                <i class="fab fa-android text-blue-500 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">ANDROID APP <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">Expert</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 85%"></div></div>
+                                </div>
+                            </div>
+
+                            <!-- ANDROID TIPS & TRICK (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('android_tips')">
+                                <i class="fas fa-tools text-yellow-500 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">ANDROID TIPS & TRICK <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">Master</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 95%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PC -->
+                    <div class="glass-card p-8 rounded-2xl hover:border-maroon-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold mb-6 text-center border-b border-gray-700 pb-4 dark:text-white text-gray-800">PERSONAL COMPUTER (PC)</h3>
+                        <div class="space-y-4">
+                            <!-- KANTOR (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('kantor')">
+                                <i class="fas fa-file-word text-blue-600 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">KANTOR <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">80%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 80%"></div></div>
+                                </div>
+                            </div>
+                            <!-- EDITING (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('editing')">
+                                <i class="fas fa-palette text-purple-400 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">EDITING <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">75%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 75%"></div></div>
+                                </div>
+                            </div>
+                            <!-- OBS / STREAMING (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('obs')">
+                                <i class="fas fa-video text-red-500 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">OBS / STREAMING <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">85%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 85%"></div></div>
+                                </div>
+                            </div>
+                            <!-- WEBSITE (Clickable) -->
+                            <div class="flex items-center gap-4 cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 p-2 rounded-lg transition-all duration-300 group" onclick="openSkillModal('website')">
+                                <i class="fas fa-globe text-teal-400 text-2xl w-8 group-hover:scale-110 transition-transform"></i>
+                                <div class="w-full">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm font-semibold dark:text-white text-gray-700 group-hover:text-maroon-500 transition-colors">WEBSITE <i class="fas fa-hand-pointer text-xs ml-1 opacity-0 group-hover:opacity-100 animate-bounce"></i></span>
+                                        <span class="text-sm text-maroon-400">60%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full"><div class="h-2 bg-maroon-600 rounded-full" style="width: 60%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="glass-card p-8 rounded-2xl hover:border-maroon-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold mb-6 text-center border-b border-gray-300 dark:border-gray-700 pb-4 dark:text-white text-gray-800">TOOLS</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Git (Clickable) -->
+                            <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg rounded-lg border border-gray-200 dark:border-gray-800 hover:border-maroon-600 transition-all cursor-pointer group" onclick="openSkillModal('git')">
+                                <i class="fab fa-git-alt text-orange-600 text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-sm dark:text-white text-gray-700 group-hover:text-maroon-500">Git</span>
+                            </div>
+                            <!-- Figma (Clickable) -->
+                            <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg rounded-lg border border-gray-200 dark:border-gray-800 hover:border-maroon-600 transition-all cursor-pointer group" onclick="openSkillModal('figma')">
+                                <i class="fab fa-figma text-purple-400 text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-sm dark:text-white text-gray-700 group-hover:text-maroon-500">Figma</span>
+                            </div>
+                            <!-- VS Code (Clickable) -->
+                            <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg rounded-lg border border-gray-200 dark:border-gray-800 hover:border-maroon-600 transition-all cursor-pointer group" onclick="openSkillModal('vscode')">
+                                <i class="fas fa-terminal text-gray-600 dark:text-gray-300 text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-sm dark:text-white text-gray-700 group-hover:text-maroon-500">VS Code</span>
+                            </div>
+                            <!-- NPM (Clickable) -->
+                            <div class="flex flex-col items-center justify-center p-4 bg-gray-50 dark:bg-dark-bg rounded-lg border border-gray-200 dark:border-gray-800 hover:border-maroon-600 transition-all cursor-pointer group" onclick="openSkillModal('npm')">
+                                <i class="fab fa-npm text-red-500 text-3xl mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-sm dark:text-white text-gray-700 group-hover:text-maroon-500">NPM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="index.html#skills" class="inline-flex items-center justify-center bg-maroon-700 hover:bg-maroon-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL CONTAINER FOR SKILL DETAIL (MOVED HERE) -->
+    <div id="skillModal" class="fixed inset-0 z-[100] hidden items-center justify-center flex bg-black/80 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white dark:bg-[#1a1a1a] p-8 rounded-2xl max-w-sm w-full mx-4 border border-maroon-900/30 transform scale-95 transition-transform duration-300 shadow-[0_0_30px_rgba(185,28,28,0.3)] relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-maroon-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            
+            <div class="flex justify-between items-center mb-6 relative z-10">
+                <h3 id="skillModalTitle" class="text-2xl font-bold text-maroon-600 dark:text-maroon-500 flex items-center gap-2">
+                    <!-- Title Injected by JS -->
+                </h3>
+                <button onclick="closeSkillModal()" class="text-gray-400 hover:text-red-500 transition-colors p-1">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <ul id="skillModalList" class="space-y-3 relative z-10">
+                <!-- List Items Injected by JS -->
+            </ul>
+
+            <div class="mt-6 text-center">
+                <p class="text-xs text-muted italic">"Terus belajar, terus berkembang!"</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-black py-8 border-t border-maroon-900/10 dark:border-maroon-900/30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-muted">
+                &copy; 2025 <span class="text-maroon-500 font-bold">King Ejot</span>. All Rights Reserved.
+            </p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="YouTube"><i class="fab fa-youtube text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="Facebook"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Khusus Skill Section (MOVED HERE) -->
+    <script>
+        // DATA POP-UP SKILLS
+        const skillData = {
+            'mobile_game': {
+                title: '<i class="fas fa-gamepad animate-pulse"></i> Game List',
+                items: [
+                    { icon: 'fas fa-fighter-jet', color: 'yellow', text: 'PUBG Mobile' },
+                    { icon: 'fas fa-shield-alt', color: 'blue', text: 'Mobile Legend' },
+                    { icon: 'fas fa-crosshairs', color: 'green', text: 'Rules of Survival' }
+                ]
+            },
+            'android_app': {
+                title: '<i class="fab fa-android animate-bounce"></i> Android App',
+                items: [
+                    { icon: 'fas fa-robot', color: 'green', text: 'Macrodroid' },
+                    { icon: 'fas fa-video', color: 'blue', text: 'Droidcam' },
+                    { icon: 'fas fa-camera', color: 'purple', text: 'FH Cam' }
+                ]
+            },
+            'android_tips': {
+                title: '<i class="fas fa-lightbulb animate-pulse"></i> Tips & Trick',
+                items: [
+                    { icon: 'fas fa-desktop', color: 'red', text: 'Mirorring' },
+                    { icon: 'fas fa-cogs', color: 'gray', text: 'Oprek' },
+                    { icon: 'fas fa-map-marked-alt', color: 'orange', text: 'FakeGPS' }
+                ]
+            },
+            'kantor': {
+                title: '<i class="fas fa-briefcase animate-pulse"></i> Keahlian Kantor',
+                items: [
+                    { icon: 'fas fa-file-word', color: 'blue', text: 'MS Word (Dokumen)' },
+                    { icon: 'fas fa-file-excel', color: 'green', text: 'MS Excel (Data & Angka)' },
+                    { icon: 'fas fa-file-powerpoint', color: 'red', text: 'PowerPoint (Presentasi)' }
+                ]
+            },
+            'editing': {
+                title: '<i class="fas fa-video-camera animate-bounce"></i> Editing (PC)',
+                items: [
+                    { icon: 'fas fa-images', color: 'purple', text: 'Adobe Photoshop' },
+                    { icon: 'fas fa-film', color: 'yellow', text: 'Adobe After Effect' },
+                    { icon: 'fas fa-edit', color: 'pink', text: 'Lain-lain' }
+                ]
+            },
+            'obs': {
+                title: '<i class="fas fa-satellite-dish animate-pulse"></i> OBS / Streaming',
+                items: [
+                    { icon: 'fas fa-desktop', color: 'red', text: 'Setup Stream Dasar' },
+                    { icon: 'fas fa-layer-group', color: 'gray', text: 'Scene Management' },
+                    { icon: 'fas fa-broadcast-tower', color: 'green', text: 'Basic Broadcasting' }
+                ]
+            },
+            'website': {
+                title: '<i class="fas fa-code-branch animate-bounce"></i> Website Development',
+                items: [
+                    { icon: 'fas fa-scroll', color: 'orange', text: 'Ilmu Dasar (Pemula)' },
+                    { icon: 'fas fa-paint-brush', color: 'blue', text: 'Desain Web' },
+                    { icon: 'fas fa-terminal', color: 'teal', text: 'Sedikit Ilmu VSCode' }
+                ]
+            },
+            'git': {
+                title: '<i class="fab fa-git-alt animate-bounce"></i> Version Control',
+                items: [
+                    { icon: 'fab fa-github', color: 'gray', text: 'GitHub Actions' },
+                    { icon: 'fas fa-code-branch', color: 'orange', text: 'Branch Management' },
+                    { icon: 'fas fa-users', color: 'blue', text: 'Team Collaboration' }
+                ]
+            },
+            'figma': {
+                title: '<i class="fab fa-figma animate-pulse"></i> Design Tools',
+                items: [
+                    { icon: 'fas fa-pencil-ruler', color: 'purple', text: 'UI Prototyping' },
+                    { icon: 'fas fa-layer-group', color: 'pink', text: 'Design Systems' },
+                    { icon: 'fas fa-vector-square', color: 'blue', text: 'Wireframing' }
+                ]
+            },
+            'vscode': {
+                title: '<i class="fas fa-terminal animate-bounce"></i> Editor Skills',
+                items: [
+                    { icon: 'fas fa-bug', color: 'red', text: 'Debugging' },
+                    { icon: 'fas fa-puzzle-piece', color: 'blue', text: 'Extensions Mastery' },
+                    { icon: 'fas fa-keyboard', color: 'gray', text: 'Shortcuts Ninja' }
+                ]
+            },
+            'npm': {
+                title: '<i class="fab fa-npm animate-pulse"></i> Package Manager',
+                items: [
+                    { icon: 'fas fa-box-open', color: 'red', text: 'Dependency Mgmt' },
+                    { icon: 'fas fa-scroll', color: 'yellow', text: 'Custom Scripts' },
+                    { icon: 'fas fa-upload', color: 'green', text: 'Publishing Packages' }
+                ]
+            }
+        };
+
+        // Utility function to generate list item HTML
+        function generateListItem(item) {
+            // Mapping colors to Tailwind classes for safety (avoiding dynamic class generation warnings)
+            const colorMap = {
+                'yellow': 'text-yellow-500 bg-yellow-900/30 group-hover:bg-yellow-500',
+                'blue': 'text-blue-500 bg-blue-900/30 group-hover:bg-blue-500',
+                'green': 'text-green-500 bg-green-900/30 group-hover:bg-green-500',
+                'purple': 'text-purple-500 bg-purple-900/30 group-hover:bg-purple-500',
+                'red': 'text-red-500 bg-red-900/30 group-hover:bg-red-500',
+                'gray': 'text-gray-500 bg-gray-900/30 group-hover:bg-gray-500',
+                'orange': 'text-orange-500 bg-orange-900/30 group-hover:bg-orange-500',
+                'pink': 'text-pink-500 bg-pink-900/30 group-hover:bg-pink-500',
+                'teal': 'text-teal-500 bg-teal-900/30 group-hover:bg-teal-500',
+            };
+            const colors = colorMap[item.color] || 'text-maroon-500 bg-maroon-900/30 group-hover:bg-maroon-600';
+            
+            return `
+                <li class="flex items-center gap-4 p-3 rounded-xl bg-gray-50 dark:bg-black/30 hover:border-maroon-500 border border-transparent transition-all hover:translate-x-1 group cursor-default">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center text-white transition-colors ${colors}">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <span class="font-medium dark:text-gray-200 text-gray-700">${item.text}</span>
+                </li>
+            `;
+        }
+
+
+        // Skill Modal Logic
+        function openSkillModal(key) {
+            const data = skillData[key];
+            if (!data) return;
+
+            const modal = document.getElementById('skillModal');
+            const titleEl = document.getElementById('skillModalTitle');
+            const listEl = document.getElementById('skillModalList');
+
+            // Set Title
+            titleEl.innerHTML = data.title;
+
+            // Generate List
+            listEl.innerHTML = data.items.map(generateListItem).join('');
+
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                const modalContent = modal.querySelector('div');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeSkillModal() {
+            const modal = document.getElementById('skillModal');
+            modal.classList.add('opacity-0');
+            const modalContent = modal.querySelector('div');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('skillModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('skillModal')) {
+                closeSkillModal();
+            }
+        });
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

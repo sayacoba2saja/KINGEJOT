@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING EJOT - FEATURED PROJECTS</title>
+    <link rel="icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFOG3Q1SSjYSiNHuA_tw9GKwCRT1VNgdmz0WXPunkzkHeAzVtn4XWQckRCY7YR0mcdIBnNDi6lmyTyXiqJOBUnUVq8PF4yyAgSQchVB3Z7dQSPcmb9X7PgCnNCZ80UNhAwtvyfKPrRiB3-xq7aRkbmwUjVhfVHp5XB5xO8PbeIgbquEr7JrI5B5KIuegq4y/w400-h400/EJOT%20LOGO%20(HD).png"
+                type="image/png">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            DEFAULT: '#800000',
+                            50: '#fef2f2',
+                            100: '#fee2e2',
+                            200: '#fecaca',
+                            300: '#fca5a5',
+                            400: '#f87171',
+                            500: '#ef4444',
+                            600: '#dc2626',
+                            700: '#b91c1c', 
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                            950: '#450a0a',
+                        },
+                        dark: {
+                            bg: '#0f0f0f',
+                            card: '#1a1a1a',
+                            input: '#2a2a2a'
+                        },
+                        light: {
+                            bg: '#f9fafb',
+                            card: '#ffffff',
+                            input: '#f3f4f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --bg-color: #f9fafb;
+            --text-color: #1f2937;
+            --text-muted: #6b7280;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(127, 29, 29, 0.1);
+            --input-bg: #f3f4f6;
+            --nav-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        .dark {
+            --bg-color: #0f0f0f;
+            --text-color: #ffffff;
+            --text-muted: #9ca3af;
+            --card-bg: rgba(26, 26, 26, 0.7);
+            --card-border: rgba(127, 29, 29, 0.3);
+            --input-bg: #2a2a2a;
+            --nav-bg: rgba(15, 15, 15, 0.9);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .text-muted {
+            color: var(--text-muted);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7f1d1d;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ef4444;
+        }
+
+        /* Text Gradient Maroon */
+        .text-gradient {
+            background: linear-gradient(to right, #ef4444, #7f1d1d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Glassmorphism Card (Updated for Theme Support) */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        /* Shadow tambahan untuk light mode agar kartu terlihat jelas */
+        html:not(.dark) .glass-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* --- LOGO TEXT SHADOW --- */
+        .hover-text-red:hover {
+            text-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.4);
+        }
+        .hover-text-white:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.4);
+        }
+    </style>
+
+    <!-- Script to set initial theme based on preference -->
+    <script>
+        function setInitialTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        setInitialTheme();
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+</head>
+<body class="transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky w-full z-50 top-0 left-0 bg-[var(--nav-bg)] backdrop-blur-md border-b border-maroon-900/10 dark:border-maroon-900/30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 cursor-pointer group flex items-center gap-3">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNTKypUcbQULTsBvgTBjynHonvLbVTG41RxeWBhUCsm1mTvwZDxAP9J6pYjLZXduD75anAOx5-tbIEDxm9VN1vca56rvNx0Xe-flE5tEhSv6jGLi42KJw0XyyTy_GtATtHnlaD0Sa2HGDEutN_UuklewZAJA5WlKIiJTpH1wFUQk-FHxA69JZIvqbexr_/w400-h400/EJOT%20LOGO%20(2).png" 
+                             alt="King Ejot Logo" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/7f1d1d/ffffff?text=KE';"
+                             class="h-10 w-10 object-contain rounded-full shadow-[0_0_10px_rgba(185,28,28,0.4)] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(239,68,68,0.6)] group-hover:scale-110">
+                    
+                    <h1 class="text-2xl font-bold font-sans p-2 rounded-lg transition-all duration-300">
+                        <span class="transition-all duration-300 hover-text-red group-hover:text-shadow-[0_0_15px_rgba(239,68,68,0.8)]">KING</span>
+                        <span class="text-maroon-500 transition-all duration-300 hover-text-white group-hover:text-shadow-[0_0_15px_rgba(255,255,255,0.8)]">EJOT</span>
+                    </h1>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html#home" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="tentang.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">About</a>
+                    <a href="skill.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                    <a href="service.html" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                    <a href="#projects" class="hover:text-maroon-500 transition-colors px-3 py-2 rounded-md text-sm font-medium border-b-2 border-maroon-500 font-bold">Projects</a>
+                    <!-- CTA Button -->
+                    <a href="index.html#contact" class="bg-maroon-700 hover:bg-maroon-600 text-white px-6 py-2 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                        Let's Talk
+                    </a>
+
+                    <!-- Theme Toggle (Desktop) -->
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i> 
+                        <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Controls (Toggle + Menu) -->
+                <div class="md:hidden flex items-center gap-4">
+                     <!-- Theme Toggle (Mobile) -->
+                     <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors focus:outline-none">
+                        <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i>
+                        <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-maroon-500 dark:hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[var(--nav-bg)] border-t border-maroon-900/10 dark:border-maroon-900/30">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html#skills" class="inline-flex items-center justify-center bg-maroon-700 hover:bg-maroon-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <main class="min-h-screen pt-24 pb-20 bg-gray-100 dark:bg-[#0a0a0a]">
+        <section id="projects" class="py-12 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[var(--text-color)]">Featured <span class="text-maroon-500">Projects</span></h2>
+                    <p class="text-muted">Lihatlah beberapa karya terbaik saya di bawah ini.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md dark:shadow-none bg-white dark:bg-transparent">
+                        <div class="aspect-w-16 aspect-h-9 h-64 bg-gray-200 dark:bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/1000x600/450a0a/ffffff?text=E-COMMERCE+PROJECT';"
+                                 class="object-cover w-full h-full opacity-90 dark:opacity-60 group-hover:opacity-40 transition-opacity duration-300" alt="E-commerce">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">E-commerce Platform</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Solusi e-commerce full-stack dengan dashboard admin dan gateway pembayaran.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">React</span>
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">NodeJS</span>
+                            </div>
+                            <a href="index.html#contact" class="inline-flex items-center text-maroon-400 hover:text-maroon-300 font-medium">View Project <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md dark:shadow-none bg-white dark:bg-transparent">
+                        <div class="aspect-w-16 aspect-h-9 h-64 bg-gray-200 dark:bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/1000x600/7f1d1d/ffffff?text=TASK+MANAGER+APP';"
+                                 class="object-cover w-full h-full opacity-90 dark:opacity-60 group-hover:opacity-40 transition-opacity duration-300" alt="Dashboard">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Task Management App</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Aplikasi manajemen tugas kolaboratif dengan update real-time.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">Vue.js</span>
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">Firebase</span>
+                            </div>
+                            <a href="index.html#contact" class="inline-flex items-center text-maroon-400 hover:text-maroon-300 font-medium">View Project <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl border border-gray-300 dark:border-gray-800 shadow-md dark:shadow-none bg-white dark:bg-transparent">
+                        <div class="aspect-w-16 aspect-h-9 h-64 bg-gray-200 dark:bg-gray-800">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/1000x600/450a0a/ffffff?text=SOCIAL+DASHBOARD';"
+                                 class="object-cover w-full h-full opacity-90 dark:opacity-60 group-hover:opacity-40 transition-opacity duration-300" alt="Portfolio">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Social Media Dashboard</h3>
+                            <p class="text-gray-300 text-sm mb-4 line-clamp-2">Dashboard analitik media sosial yang komprehensif.</p>
+                            <div class="flex gap-2 mb-4">
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">Angular</span>
+                                <span class="text-xs bg-maroon-900/50 text-maroon-300 px-2 py-1 rounded border border-maroon-800">Chart.js</span>
+                            </div>
+                            <a href="index.html#contact" class="inline-flex items-center text-maroon-400 hover:text-maroon-300 font-medium">View Project <i class="fas fa-arrow-right ml-2 text-xs"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="index.html#projects" class="inline-flex items-center justify-center bg-maroon-700 hover:bg-maroon-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-[0_0_15px_rgba(185,28,28,0.4)] hover:shadow-[0_0_25px_rgba(239,68,68,0.6)]">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-black py-8 border-t border-maroon-900/10 dark:border-maroon-900/30 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-muted">
+                &copy; 2025 <span class="text-maroon-500 font-bold">King Ejot</span>. All Rights Reserved.
+            </p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="YouTube"><i class="fab fa-youtube text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="Facebook"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-maroon-500 transition-colors" title="TikTok"><i class="fab fa-tiktok text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
